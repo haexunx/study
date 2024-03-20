@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${popupItem.title}">Title</title>
+</head>
+<body>
+<script th:inline="javascript">
+  window.onload = () => {
+    const content = [[${popupItem.content}]];
+    if (content) {
+      alert(content);
+    }
+
+    const redirectPath = [[${popupItem.redirectPath}]];
+    if (redirectPath) {
+      location.href = redirectPath;
+    }
+  }
+</script>
+
+</body>
+</html>
